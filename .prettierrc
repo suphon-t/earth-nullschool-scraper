@@ -1,0 +1,7 @@
+{
+  "semi": false,
+  "importOrder": ["^app/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "singleQuote": true,
+  "trailingComma": "es5"
+}
