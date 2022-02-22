@@ -1,0 +1,24 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./data.db"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+model DataPoint {
+  datetime String
+  location String
+
+  lat  Decimal
+  long Decimal
+
+  temp Decimal
+
+  windDir   Int
+  windSpeed Int
+
+  @@id([datetime, location])
+}
