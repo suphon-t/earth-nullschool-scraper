@@ -89,15 +89,26 @@ async function* generateData() {
   }
 }
 
+const locations = [
+  ['Bangkok', 13.754, 100.5014],
+  ['Chanthaburi', 12.6096, 102.1045],
+  ['Chiang Mai', 18.7904, 98.9847],
+  ['Kanchanaburi', 14.0041, 99.5483],
+  ['Khon Kaen', 16.4467, 102.833],
+  ['Songkhla', 7.1988, 100.5951],
+]
+
 async function main() {
-  const [lat, long] = [13.754, 100.5014]
   for await (const { dateTime, temp, wind } of generateData()) {
-    const tempVal = temp.field().bilinear(long, lat)
-    const windVal = wind.field().bilinear(long, lat)
-    const tempFormatted = tempUnitDescriptors['°C'].format(tempVal).formattedVal
-    const windFormatted =
-      windUnitDescriptors['km/h'].format(windVal).formattedVal
-    console.log(dateTime, tempFormatted, windFormatted)
+    for (const [name, lat, long] of locations) {
+      const tempVal = temp.field().bilinear(long, lat)
+      const windVal = wind.field().bilinear(long, lat)
+      const tempFormatted =
+        tempUnitDescriptors['°C'].format(tempVal).formattedVal
+      const windFormatted =
+        windUnitDescriptors['km/h'].format(windVal).formattedVal
+      console.log(name, dateTime, tempFormatted, windFormatted)
+    }
   }
 }
 
