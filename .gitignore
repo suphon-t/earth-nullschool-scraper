@@ -1,3 +1,5 @@
 node_modules
-bundle.json
+app/*
+!app/lib/
 data.db
+data2.db
