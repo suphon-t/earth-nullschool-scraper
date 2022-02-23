@@ -1,4 +1,5 @@
 node_modules
+bundle.a25d92.js.map
 app/*
 !app/lib/
 data.db
