@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "download-app": "node src/appExtractor",
+    "migrate": "prisma migrate deploy",
     "scrape": "node src/scraper"
   },
   "dependencies": {
