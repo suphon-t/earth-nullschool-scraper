@@ -11,7 +11,7 @@ const { PrismaClient } = prisma
 
 const db = new PrismaClient()
 
-const beginDate = new Date('2016-03-03 01:00:00')
+const beginDate = new Date('2017-07-01 01:00:00')
 
 const tempUnitDescriptors = createUnitDescriptors({
   '°C': { convert: (x) => x - 273.15, precision: 1 },
@@ -122,12 +122,12 @@ async function* generateData(beginDate) {
 }
 
 const locations = [
-  ['Bangkok', 13.754, 100.5014],
-  ['Chanthaburi', 12.6096, 102.1045],
-  ['Chiang Mai', 18.7904, 98.9847],
-  ['Kanchanaburi', 14.0041, 99.5483],
-  ['Khon Kaen', 16.4467, 102.833],
-  ['Songkhla', 7.1988, 100.5951],
+  ['Bangkok', 13.729984, 100.536443],
+  ['Chiangmai', 18.840633, 98.969661],
+  ['Khonkaen', 16.445329, 102.835251],
+  ['Rayong', 12.671521, 101.275875],
+  ['Saraburi', 14.685833, 100.871996],
+  ['Surat', 9.126057, 99.325355],
 ]
 
 async function main() {
