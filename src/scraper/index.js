@@ -122,7 +122,7 @@ async function* generateData(beginDate) {
 }
 
 const locations = [
-  ['Bangkok', 13.729984, 100.536443],
+  ['BKK', 13.729984, 100.536443],
   ['Chiangmai', 18.840633, 98.969661],
   ['Khonkaen', 16.445329, 102.835251],
   ['Rayong', 12.671521, 101.275875],
