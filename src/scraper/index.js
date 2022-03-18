@@ -136,19 +136,30 @@ async function main() {
     for (const [name, lat, long] of locations) {
       const tempVal = temp.field().bilinear(long, lat)
       const windVal = wind.field().bilinear(long, lat)
+      const [windX, windY] = windVal
       const tempFormatted =
         tempUnitDescriptors['°C'].format(tempVal).formattedVal
       const windFormatted =
         windUnitDescriptors['km/h'].format(windVal).formattedVal
       const dt = format(dateTime, 'yyyy-MM-dd HH:mm:ss')
       const [windDirection, windSpeed] = windFormatted.split('° @ ')
-      console.log(name, dt, tempFormatted, windDirection, windSpeed)
+      console.log(
+        name,
+        dt,
+        tempFormatted,
+        windDirection,
+        windSpeed,
+        windX,
+        windY
+      )
       const data = {
         lat,
         long,
         temp: parseFloat(tempFormatted),
         windDir: parseInt(windDirection),
         windSpeed: parseInt(windSpeed),
+        windX,
+        windY,
       }
       await db.dataPoint.upsert({
         where: {

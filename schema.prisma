@@ -20,5 +20,8 @@ model DataPoint {
   windDir   Int
   windSpeed Int
 
+  windX Decimal
+  windY Decimal
+
   @@id([datetime, location])
 }
