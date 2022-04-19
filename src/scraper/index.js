@@ -11,7 +11,7 @@ const { PrismaClient } = prisma
 
 const db = new PrismaClient()
 
-const beginDate = new Date('2017-06-30 01:00:00')
+const beginDate = new Date('2017-06-01 01:00:00')
 
 const tempUnitDescriptors = createUnitDescriptors({
   '°C': { convert: (x) => x - 273.15, precision: 1 },
